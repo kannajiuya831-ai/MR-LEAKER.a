@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070b14"><title>MR LEAKER | Official Gaming Hub</title>
+<style>
+:root{--bg:#060a12;--panel:#0d1728;--panel2:#10213a;--blue:#168cff;--cyan:#49dfff;--text:#f3f7ff;--muted:#9aabc2;--line:#203a5c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#102c50 0,transparent 38%),var(--bg);color:var(--text);font-family:system-ui,Arial,sans-serif}
+a{color:inherit}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+header{position:sticky;top:0;z-index:5;background:#070b14ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;flex-wrap:wrap}
+.brand{font-weight:950;letter-spacing:1px;font-size:22px;text-decoration:none}.brand b{color:var(--cyan);text-shadow:0 0 18px #168cff}
+nav{display:flex;align-items:center;gap:5px;flex-wrap:wrap}nav a{font-size:13px;text-decoration:none;color:var(--muted);padding:9px;border-radius:9px}nav a:hover{background:var(--panel2);color:white}
+button,.btn{border:0;border-radius:10px;padding:11px 14px;background:linear-gradient(110deg,var(--blue),#0753bd);color:white;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.btn.alt,button.alt{background:var(--panel2);border:1px solid var(--line)}button.danger{background:#67283a;border:1px solid #a94b65}
+.hero{padding:56px 0 35px;display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:center}
+.kicker{font-size:11px;letter-spacing:3px;color:var(--cyan);font-weight:900}
+h1{font-size:clamp(42px,8vw,76px);line-height:.98;margin:13px 0}.glow{color:var(--cyan);text-shadow:0 0 25px #168cff88}
+p{line-height:1.7}.muted{color:var(--muted)}.hero p{max-width:600px;color:var(--muted)}
+.heroart{min-height:245px;border:1px solid #24527e;border-radius:22px;background:linear-gradient(145deg,#12365d,#09111f 70%);display:grid;place-items:center;text-align:center;padding:20px;box-shadow:0 20px 70px #006dff18}
+.heroart strong{font-size:clamp(28px,6vw,53px);letter-spacing:3px;text-shadow:0 0 25px #168cff}.heroart small{display:block;color:var(--cyan);letter-spacing:4px;margin-top:10px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+section{padding:28px 0 35px}.heading{margin-bottom:16px}h2{margin:0;font-size:25px}.hint{font-size:13px;color:var(--muted);margin-top:5px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:linear-gradient(160deg,var(--panel2),var(--panel))}
+.thumb{height:auto;aspect-ratio:16/9;position:relative;display:grid;place-items:center;background:linear-gradient(135deg,#124675,#09111f);color:#c7ecff;font-weight:900}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.play{position:absolute;z-index:1;background:#168cffed;border-radius:50%;width:46px;height:46px;display:grid;place-items:center;box-shadow:0 0 25px #168cff88}
+.body{padding:13px}.body h3{font-size:16px;margin:0 0 7px}.meta{font-size:12px;color:var(--muted)}.cardactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.small{font-size:12px;padding:8px 10px;border-radius:8px}.empty{grid-column:1/-1;padding:25px;text-align:center;border:1px dashed #29476b;border-radius:14px;color:var(--muted)}
+.aboutbox{background:linear-gradient(120deg,#0e1d33,#0a1120);border:1px solid var(--line);padding:20px;border-radius:16px;color:var(--muted);line-height:1.7}
+.socials{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}.socials a{padding:9px 12px;border:1px solid var(--line);background:#0c192b;border-radius:9px;text-decoration:none;font-size:13px}
+footer{border-top:1px solid var(--line);padding:25px 0;text-align:center;color:var(--muted);font-size:12px}
+.modal{display:none;position:fixed;inset:0;background:#000c;z-index:20;padding:14px;overflow:auto}.modal.show{display:grid;place-items:center}
+.dialog{width:min(650px,100%);max-height:94vh;overflow:auto;background:#0c1627;border:1px solid #28517a;border-radius:16px;padding:18px;box-shadow:0 25px 80px #0009}
+.dialogtop{display:flex;align-items:center;justify-content:space-between;gap:10px}.dialog h2{font-size:21px}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}.tab{padding:9px 11px;background:#10213a;border:1px solid var(--line);color:#dcecff;border-radius:9px;font-size:13px}.tab.active{background:#0753bd}
+.panel{display:none}.panel.active{display:block}.field{margin:12px 0}.field label{display:block;font-size:13px;color:#c7d9ef;margin-bottom:6px}
+input,textarea,select{width:100%;padding:12px;border-radius:9px;border:1px solid #29415f;background:#07101e;color:white;font:inherit}textarea{min-height:85px;resize:vertical}
+.note{font-size:12px;color:var(--muted);line-height:1.6}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+#frame{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;background:#000}
+@media(max-width:720px){.hero{grid-template-columns:1fr;padding-top:38px}.heroart{min-height:175px}.grid{grid-template-columns:repeat(2,1fr)}.nav{align-items:flex-start;flex-direction:column}nav{width:100%}}
+@media(max-width:460px){.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.wrap{width:min(100% - 24px,1120px)}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#home"><span id="brandName">MR</span> <b id="brandAccent">LEAKER</b></a>
+<nav><a href="#home">Home</a><a href="#videos">Videos</a><a href="#shorts">Shorts</a><a href="#gallery">Gallery</a><a href="#about">About</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero" id="home">
+<div><div class="kicker">WELCOME TO MY GAMING WORLD</div><h1><span id="heroName">MR</span> <span class="glow" id="heroAccent">LEAKER</span></h1>
+<p id="tagline">Free Fire gameplay, clutch moments, headshots, tips aur daily gaming videos — sab ek jagah. Welcome to the squad!</p>
+<div class="actions"><a class="btn" href="#videos">▶ WATCH VIDEOS</a><a class="btn alt" href="#about">ABOUT ME</a></div></div>
+<div class="heroart"><div><strong id="artName">MR LEAKER</strong><small>FREE FIRE • GAMING • ACTION</small></div></div>
+</section>
+<section id="videos"><div class="heading"><h2>Latest Videos</h2><div class="hint">Gameplay • Highlights • Tips</div></div><div class="grid" id="videoGrid"></div></section>
+<section id="shorts"><div class="heading"><h2>Free Fire Shorts</h2><div class="hint">Quick clips and epic moments</div></div><div class="grid" id="shortGrid"></div></section>
+<section id="gallery"><div class="heading"><h2>Gaming Gallery</h2><div class="hint">Screenshots and gaming artwork</div></div><div class="grid" id="galleryGrid"></div></section>
+<section id="about"><div class="heading"><h2>About Me</h2></div><div class="aboutbox"><div id="aboutText">Welcome to MR LEAKER! Yahan Free Fire gameplay, highlights, shorts aur gaming updates share kiye jayenge.</div><div class="socials" id="socialLinks"></div><p id="contactText"></p></div></section>
+</main>
+<footer>© <span id="year"></span> <span id="footerName">MR LEAKER</span> • Official Gaming Website</footer>
+
+<div class="modal" id="playerModal"><div class="dialog"><div class="dialogtop"><h2 id="playerTitle">Video</h2><button class="alt small" onclick="closePlayer()">✕ Close</button></div><iframe id="frame" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+<script>
+const DB='mrl_site_v2', PINKEY='mrl_demo_pin';
+let data={posts:[],profile:{name:'MR LEAKER',tag:'Free Fire gameplay, clutch moments, headshots, tips aur daily gaming videos — sab ek jagah. Welcome to the squad!',about:'Welcome to MR LEAKER! Yahan Free Fire gameplay, highlights, shorts aur gaming updates share kiye jayenge.',youtube:'',instagram:'',other:'',email:''}};
+const $=id=>document.getElementById(id);
+function load(){try{const x=JSON.parse(localStorage.getItem(DB)||'null');if(x&&Array.isArray(x.posts))data=x}catch(e){}}
+function persist(){localStorage.setItem(DB,JSON.stringify(data));render()}
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function youtubeId(url){try{let u=new URL(url);if(u.hostname.includes('youtu.be'))return u.pathname.slice(1);if(u.hostname.includes('youtube.com'))return u.searchParams.get('v')||u.pathname.split('/').filter(Boolean).pop()}catch(e){}return null}
+function render(){
+ const p=data.profile;let parts=(p.name||'MR LEAKER').trim().split(/\s+/);let first=parts.shift()||'MR',rest=parts.join(' ')||'LEAKER';
+ $('brandName').textContent=first;$('brandAccent').textContent=rest;$('heroName').textContent=first;$('heroAccent').textContent=rest;$('artName').textContent=p.name;$('footerName').textContent=p.name;$('tagline').textContent=p.tag;$('aboutText').textContent=p.about;$('contactText').textContent=p.email?'Contact: '+p.email:'';
+ const links=[];if(p.youtube)links.push(['YouTube',p.youtube]);if(p.instagram)links.push(['Instagram',p.instagram]);if(p.other)links.push(['More links',p.other]);
+ $('socialLinks').innerHTML=links.map(([n,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${n} ↗</a>`).join('');
+ $('year').textContent=new Date().getFullYear();
+ group('video','videoGrid');group('short','shortGrid');group('gallery','galleryGrid');
+}
+function group(type,target){let arr=data.posts.map((p,i)=>({...p,index:i})).filter(p=>p.type===type).reverse();$(target).innerHTML=arr.length?arr.map(p=>makeCard(p)).join(''):'<div class="empty">Abhi content nahi hai. Admin se apna pehla post add karo.</div>'}
+function makeCard(p){let id=youtubeId(p.url),img=p.type==='gallery'?p.url:(id?'https://img.youtube.com/vi/'+encodeURIComponent(id)+'/hqdefault.jpg':'');
+return `<article class="card"><div class="thumb">${img?`<img src="${esc(img)}" alt="" onerror="this.style.display='none'">`:''}${p.type!=='gallery'?'<span class="play">▶</span>':'<span>MRL</span>'}</div><div class="body"><h3>${esc(p.title)}</h3><div class="meta">${p.type.toUpperCase()}${p.desc?' • '+esc(p.desc):''}</div><div class="cardactions">${p.type==='gallery'?`<a class="btn alt small" href="${esc(p.url)}" target="_blank" rel="noopener">View image ↗</a>`:`<button class="alt small" onclick="playPost(${p.index})">▶ Play</button>`}</div></div></article>`}
+function adminLogin(){let saved=localStorage.getItem(PINKEY)||'2468';let pin=prompt('Admin demo PIN:');if(pin===saved){openModal('adminModal');fillProfile()}else if(pin!==null)alert('PIN galat hai.')}
+function fillProfile(){let p=data.profile;$('siteName').value=p.name||'';$('siteTag').value=p.tag||'';$('siteAbout').value=p.about||'';$('siteYoutube').value=p.youtube||'';$('siteInstagram').value=p.instagram||'';$('siteOther').value=p.other||'';$('siteEmail').value=p.email||''}
+function addPost(){let type=$('postType').value,title=$('postTitle').value.trim(),url=$('postUrl').value.trim(),desc=$('postDesc').value.trim();if(!title||!url)return alert('Title aur URL dono bharein.');if(type!=='gallery'&&!youtubeId(url))return alert('Valid YouTube URL daalein.');if(type==='gallery'&&!/^https?:\/\//i.test(url))return alert('Public image URL https:// se shuru hona chahiye.');data.posts.push({type,title,url,desc,date:Date.now()});persist();$('postTitle').value='';$('postUrl').value='';$('postDesc').value='';alert('Post is browser mein save ho gaya.')}
+function saveProfile(){let name=$('siteName').value.trim();if(!name)return alert('Website name likhein.');data.profile={name,tag:$('siteTag').value.trim(),about:$('siteAbout').value.trim(),youtube:$('siteYoutube').value.trim(),instagram:$('siteInstagram').value.trim(),other:$('siteOther').value.trim(),email:$('siteEmail').value.trim()};persist();alert('Website details saved!')}
+function manage(){$('manageList').innerHTML=data.posts.length?data.posts.map((p,i)=>`<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #203a5c;padding:10px 0"><span><b>${esc(p.title)}</b><br><small>${p.type}</small></span><button class="danger small" onclick="removePost(${i})">Delete</button></div>`).join(''):'No posts yet.'}
+function removePost(i){if(confirm('Is post ko delete karein?')){data.posts.splice(i,1);persist()}}
+function exportBackup(){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='mr-leaker-backup.json';a.click();URL.revokeObjectURL(a.href)}
+function importBackup(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!Array.isArray(x.posts)||!x.profile)throw 0;data=x;persist();fillProfile();alert('Backup restored!')}catch(err){alert('Backup file valid nahi hai.')}};r.readAsText(f);e.target.value=''}
+function clearAll(){if(confirm('Saare posts delete honge. Continue?')){data.posts=[];persist()}}
+function changePin(){let old=localStorage.getItem(PINKEY)||'2468',a=$('oldPin').value,b=$('newPin').value;if(a!==old)return alert('Current PIN galat hai.');if(!/^\d{4,12}$/.test(b))return alert('New PIN 4 se 12 digits ka hona chahiye.');localStorage.setItem(PINKEY,b);$('oldPin').value='';$('newPin').value='';alert('Demo PIN changed on this browser.')}
+function playPost(i){let id=youtubeId(data.posts[i].url);if(!id)return alert('YouTube video ID nahi mila.');$('playerTitle').textContent=data.posts[i].title;$('frame').src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id);openModal('playerModal')}
+function closePlayer(){$('frame').src='';closeModal('playerModal')}
+function openModal(id){$(id).classList.add('show')}function closeModal(id){$(id).classList.remove('show')}
+function showTab(id,btn){document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');btn.classList.add('active')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal('adminModal');closePlayer()}});
+load();render();
+</script>
+</body></html>
